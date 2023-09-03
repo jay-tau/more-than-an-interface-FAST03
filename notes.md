@@ -1,10 +1,12 @@
-# Abstract
+# Notes
+
+## Abstract
 
 - The paper sets out to do comprehensive comparison enterprise storage (ES) and personal storage (PS) with respect to HDDs
 - The paper aims to explain the actual difference between ATA and SCSI drives. A common misconception at the time was that they differ only in cable interface which is not the case
 - Explains the difference in mechanics, electronics and firmware
 
-# Introduction
+## Introduction
 
 - PS - HDD’s for personal computers
   - Needs to be cheap and small - cost pressure from consumer
@@ -17,34 +19,34 @@
 
 So these are the main factors, the actual interface used depends on the use case. PS can use SCSI and ES can use ATA
 
-# Requirements
+## Requirements
 
-## motivations
+### motivations
 
 - HDD’s require better error correction, encoding schemes and servo processing (have to store and process more servo data such as actuator arm, speed, R/W head location) with increase in areal density (storage (GB) / physical size (inches)).
 - We also need greater precision and noise tolerance as complexity increases
 - So as complexity increases we need to maintain performance while also reducing cost
 
-## Seek performance
+### Seek performance
 
 - Improving seek performance, requires the head to move from one location to another
 - To reduce seek time we have to improve the head performance by using more expensive components like better magnetic circuits, better actuators, faster microprocessors.
 - We also have to reduce vibrational modes that can reduce performance
 - Seek time should also not be reduced by random vibrational motion
 
-## Rotational Latency
+### Rotational Latency
 
 - Make the platter spin faster
 - Usually these innovations are first done for ES. Once it has been tried and tested on ES its moved to PS because the cost for migration is compensated by the profits made in ES
 - The graph shows the clear difference in trends
 - Generally PS innovations are cost savings type like making a 7200 rpm
 
-## Aggregation
+### Aggregation
 
 - FC, SCSI, SAS controllers can connect more than 2 HDD’s to the same host whereas IDEC’s have max 2
 - Rotational vibration - when you couple multiple HDD’s in one cabinet the vibrations produced by one HDD can affect another
 
-## SCSI advantages
+### SCSI advantages
 
 - IDE’s traditionally had programmed I/O (no DMAC/ controller chips) whereas SCSI has an external control chip to delegate work
 - SCSI has command queue
@@ -53,11 +55,11 @@ So these are the main factors, the actual interface used depends on the use case
 - SCSI has dual port which means same port can have two connections so that if one fails other can takeover
 - Dual porting - A single SCSI drive can simultaneously be connected to 2 different controllers
 
-# Tech Differences
+## Tech Differences
 
-## Mechanics
+### Mechanics
 
-### HDA (Head/Disc assembly)
+#### HDA (Head/Disc assembly)
 
 - MTBF - mean time between failure
 - ES drives operate at a higher RPM, but they also need to have a higher tolerance for external disturbance
@@ -70,14 +72,14 @@ So these are the main factors, the actual interface used depends on the use case
     6. Shrouding (physically change airflow through barriers) and air flow control to cool actuator and reduce turbulence. This is also used to cool the actuator
     7. Size and stiffness of base casting and cover affect vibrations which becomes important at high rpm
 
-### Actuator
+#### Actuator
 
 - Large magnets -> Better seek times but more power needed. So actuator coils need less resistance -> thicker coils, less windings
 - There's a latch to hold actuator in place when not in use but its magnetic so it can cause seek performance degradation for tracks located near the latch. ES drives have a bi-stable latch to overcome this issue, but it is more expensive.
 - Seek performance is not a priority in PS drives
 - in ES the coil (current passed through this along with magnets controls movement of head) and bearing cartridge (used to pivot arm) are bonded independently to the arm using special epoxy that makes it securely attached to arm
 
-### Spindle
+#### Spindle
 
 - TPI - Tracks per inch
 - Moving faster is a tremendous engineering challenge
@@ -90,16 +92,16 @@ So these are the main factors, the actual interface used depends on the use case
   - Seagate was the first to design a fluid dynamic bearing motor, captured at both ends.
   - This adds to the overall cost
 
-## Electronics
+### Electronics
 
-### Control processor
+#### Control processor
 
 - Servo bursts
   - Drive head learns about its own position, when it crosses over a servo burst (a field of information interspered among data blocks)
   - Forces the MuP to suspend all other operations and identify the position of the head
   - These servo bursts are read constantly for feedback and adjustment
 
-### Servo processor
+#### Servo processor
 
 - As the TPI increases, more servo processing is needed to prevent runout
 - Causes for imperfect tracks
@@ -109,7 +111,7 @@ So these are the main factors, the actual interface used depends on the use case
 - Non-repeatable runout is harder to compensate for.
 - Denser platters need more servo bursts which needs faster servo processors
 
-### Interface
+#### Interface
 
 - Signifcantly more silicon in ES products
   - ASIC gate count is 2x
@@ -124,14 +126,14 @@ So these are the main factors, the actual interface used depends on the use case
     2. Interface and read/write handling
 - However, most PS drives use a single processor to handle all of this
 
-### Memory
+#### Memory
 
 - Firmware for SCSI is >2x that for ATA
 - SCSI command set also allows for vendor-specific code i.e its customisable
 
-## Magnetics
+### Magnetics
 
-### Heads
+#### Heads
 
 - Writes
   - Inductive process
@@ -144,7 +146,7 @@ So these are the main factors, the actual interface used depends on the use case
   - can be adversally affected by higher RPM because higher RPM means noisier magnetic environment
   - SNR - signal to noise ratio - harder to achieve in higher RPM - recording stress (harder to read)
 
-### Materials
+#### Materials
 
 - Glass substrates
   - provide greater uniformity
@@ -155,15 +157,15 @@ So these are the main factors, the actual interface used depends on the use case
     - This requires a landing zone at the outer edge of the disk, but the outer edge is where density and data rate is highest
 - Use of anti-ferromagnetic couple media (AFC) - 2nd magnetic layer, with orientation oppoiste to the primary layer, to reinforce the magnetic orientation.
 
-### Manufacturing
+#### Manufacturing
 
 - ES drives require longer and more comprehensive testing
 
-# Performance Differences
+## Performance Differences
 
-## Capacity
+### Capacity
 
-### Size of Platters
+#### Size of Platters
 
 - $Power \propto (RPM)^3$.
 - ES drives use smaller platters, to keep power use at an acceptable level (but this means more platters for same capacity)
@@ -173,24 +175,24 @@ So these are the main factors, the actual interface used depends on the use case
 
 - PS drives use larger platters and low RPM which gives best cost per GB
 
-### Number of Platters
+#### Number of Platters
 
 - Trend towards depopulated drives. Only one surface per platter. Saves on the cost of a head
 - Fewer platters -> Lower actuator mass -> Faster seeks
 
-## Data Rate
+### Data Rate
 
 - The fastest ES drive will always have higher data rate than a PS drive, but new ES gens are far apart because they double capacity every gen, whereas PS release new versions for small changes as well
 - The larger media size helps the PS drives follow closely in  data rate. However, they are significantly behind in IOPS due to latency
 
-## Random Peerformance
+### Random Peerformance
 
-### Seek times
+#### Seek times
 
 - PS is always worse than ES
 - ES drives are designed from the ground up for highest random access performance
 
-### Seek scheduling - Queue depth
+#### Seek scheduling - Queue depth
 
 - PS drives generally have shorter queues
   - PS seek distance is closer to the theoretical 1/3 R
@@ -198,11 +200,11 @@ So these are the main factors, the actual interface used depends on the use case
   - A ~3x improvement for duty cycle. On average we can see >2x random performance
   - This also reduces mechanical strain on the drive because seeks are smaller in ES
 
-### Controller overhead
+#### Controller overhead
 
 - optimised by making the processor have better perfomance through custom hardware and software
 
-## Rotational vibration
+### Rotational vibration
 
 - Manifests as a decrease in performance due to accumulation of aborted writes and rotation misses
 - PS drives are more susceptible to external vibrations than ES but generally in PS its the only drive in the system whereas ES are specifically designed to work in cabinets
@@ -211,29 +213,29 @@ So these are the main factors, the actual interface used depends on the use case
 - PS limit - $30\ rad/s^2$, ES - $60\ rad/s^2$
 - best cabinets - $5\ rad/s^2$, worst - $45\ rad/s^2$
 
-## Reliability
+### Reliability
 
 - Most significant difference in reliablity specification is the expected power-on hours (POH)
 - POH PS - 8hr/day, 300
 
-### Duty Cycle
+#### Duty Cycle
 
 - Perfomance of mechanical work the drive has to do
 - Better seek scheduling leads to shorter seeks on average and therefore a lower effiective duty cycle
 - Additional platters and heads incereases the failure rate, due to additional mechanical stresses and increased heat generation. Additional head-disc interfaces can release particles.
 
-### Temperature
+#### Temperature
 
 - Reliability decreases with increase in ambient temperature
 
-# Related Work
+## Related Work
 
 - IDE had slightly better sequential performance but significantly lagged in random performance. However, they failed to look at all the specifications of the HDDs.
 - The slight advantage of the ATA drive in sequeuential performance, can be attributed to its higher density and platter size.
 - The SCSI drive's advantage over the ATA drive in random performance was due to smaller platters, and all the other design choices we learnt about earlier
 - Trends observered have been bringing the performance of ATA and SCSI closer together, with ATA gaining complexity as it moves closer to SCSI.
 
-# Summary & Discussion
+## Summary & Discussion
 
 - One has to look at every aspect of drive performance when comparing drives
 - Capacity is approx. the same for both PS and ES
@@ -251,10 +253,10 @@ So these are the main factors, the actual interface used depends on the use case
 - High reliability costs extra
   - Needs to be considered in every component and material choice along the way
 
-# Conclusion
+## Conclusion
 
 - Simply separating products by their external interface - ATA vs SCSI - misses many of the details and design choices that will affect system performance
 
-# Future Work
+## Future Work
 
 - Some PCs and consumer electronics use disc drives that differ significantly, from the drives studied
