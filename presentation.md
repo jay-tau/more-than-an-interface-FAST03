@@ -66,7 +66,7 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 ---
 
 ## Tech differences
-<!-- todo HDD exploded image -->
+<!-- figure 2 -->
 
 ---
 
@@ -117,6 +117,83 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 
 ---
 
+### Interface
+
+- Significantly more Silicon in ES products
+- ES have 2 processors
+  - Control processor - Read/Write and interfacing
+  - Servo processor - servo ops
+- PS have only one processor
+- SCSI command set is also more comprehensive and customisable 
+
+---
+
+## Magnetics
+
+- Writes - data rate and latency improved by higher RPM
+- Reads - Can be adverally affected by high RPM because of noiser magnetic environment (Recording stress)
+- Anti ferromagnetic coupled media (AFC) reinforces magnetic field
+
+<!-- figure 3 -->
+---
+
+## Perfomance Differences
+
+### Capacity
+
+- $Power \propto (RPM)^3$
+- ES use smaller platters for higher RPM and faster seeks $\rightarrow$ random access better
+- But for the same capacity more platters needed $\rightarrow$ costly
+- PS drives $\rightarrow$ larger platters, lower RPM $\rightarrow$ cheaper per GB
+- trend towards depopulated drives (less platters) trading capacity for perfomance
+
+---
+
+### Random I/O
+
+- ES have stronger seek scheduling making seek times ~3x
+- on average >2x random perfomance for ES compared to PS
+- lower duty cycle for ES
+
+<!-- figure 7 to show trend and table 2 to show impact of queue scheduling -->
+---
+
+### Rotational vibation
+
+<!-- Use figure 8 to explain 30 rad/s^2 and 60 rad/s^2 -->
+
+- PS drives way more susceptible to rotational vibration
+- ES drives designed to work in cabinet with other drives
+- Even cabinet design can affect rotational vibrations drastically (5 - 45 $rad/s^2$)
+
+---
+
+### Reliability
+
+- PS - 8 hrs/day 300 days/year, ES - 24 hrs/day, 365 days/year
+- POH $\propto$ AFR
+- Duty cycle $\propto$ AFR (stronger correlation with more platters)
+- Temperature $\propto$ AFR
+- AFR highly depends in design choices
+
+<!-- Use figure 9, 10, 11 to explain formulas -->
+---
+
+## Related work
+
+<!-- Use table 4, 5, 6 to illustrate related studies -->
+- Many studies have been conducted comparing SCSI vs IDE
+- results depend a lot on design choices
+- General observation - with similar conditions SCSI perform better than IDE
+
+---
+
+## Conclusion
+
+- In order to compare to drive models a detailed comparison of drive specifications is needed
+- All the factors explained before contribute to perfomance and we cannot compare solely based on interface (ATA vs SCSI)
+
+---
 <!-- _class: lead invert-->
 
 ## Questions?
