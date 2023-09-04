@@ -1,5 +1,5 @@
 ---
-marp: true
+marp: false
 theme: gaia
 class: invert
 ---
@@ -67,6 +67,7 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 
 ## Tech differences
 <!-- figure 2 -->
+![](figure2.png)
 
 ---
 
@@ -135,6 +136,8 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 - Anti ferromagnetic coupled media (AFC) reinforces magnetic field
 
 <!-- figure 3 -->
+![](figure3.png)
+
 ---
 
 ## Perfomance Differences
@@ -156,6 +159,8 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 - lower duty cycle for ES
 
 <!-- figure 7 to show trend and table 2 to show impact of queue scheduling -->
+![](figure7.png)
+![](table2.png)
 ---
 
 ### Rotational vibation
@@ -166,17 +171,30 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 - ES drives designed to work in cabinet with other drives
 - Even cabinet design can affect rotational vibrations drastically (5 - 45 $rad/s^2$)
 
+![](figure8.png)
+
 ---
 
 ### Reliability
 
-- PS - 8 hrs/day 300 days/year, ES - 24 hrs/day, 365 days/year
-- POH $\propto$ AFR
-- Duty cycle $\propto$ AFR (stronger correlation with more platters)
-- Temperature $\propto$ AFR
+- PS - 8 hrs/day 300 days/year, ES - 24 hrs/day 365 days/year
 - AFR highly depends in design choices
-
 <!-- Use figure 9, 10, 11 to explain formulas -->
+---
+
+- POH $\propto$ AFR
+![](figure9.png)
+
+---
+
+- Duty cycle $\propto$ AFR (stronger correlation with more platters)
+![](figure10.png)
+
+---
+
+- Temperature $\propto$ AFR
+![](figure11.png)
+
 ---
 
 ## Related work
@@ -185,6 +203,12 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 - Many studies have been conducted comparing SCSI vs IDE
 - results depend a lot on design choices
 - General observation - with similar conditions SCSI perform better than IDE
+
+---
+
+![](table4.png)
+![](table5.png)
+![](table6.png)
 
 ---
 
