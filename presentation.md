@@ -1,13 +1,16 @@
 ---
-marp: false
+marp: true
 theme: gaia
 class: invert
+math: mathjax
 ---
 
 # More than an interface - SCSI vs ATA
 
 ## A paper review
 
+\
+\
 \
 \
 \
@@ -19,13 +22,13 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 
 ## Introduction
 
-| Personal Storage (PS)       	| Enterprise Storage (ES)                	|
-|-----------------------------	|----------------------------------------	|
-| HDDs for personal computers 	| HDDs for enterprises                   	|
-| Single user                 	| Multiple simultaneous users            	|
-| Home use                    	| Strong reliability - business critical 	|
-| Cost is deciding factor     	| Performance is deciding factor         	|
-| Used alone                  	| Used in groups                         	|
+| Personal Storage (PS)        | Enterprise Storage (ES)                 |
+|----------------------------- |---------------------------------------- |
+| HDDs for personal computers  | HDDs for enterprises                    |
+| Single user                  | Multiple simultaneous users             |
+| Home use                     | Strong reliability - business critical  |
+| Cost is deciding factor      | Performance is deciding factor          |
+| Used alone                   | Used in groups                          |
 
 ---
 
@@ -35,7 +38,6 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 
 - Faster head movement
 - Done by better actuators, larger magnets, vibration resilience
-
 
 ### Rotational latency
 
@@ -66,34 +68,35 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 ---
 
 ## Tech differences
+
 <!-- figure 2 -->
-![](figure2.png)
+$\quad\quad\quad\quad$ ![w:830 h:530](figure2.png)
 
 ---
 
 ## Mechanics
 
+### Actuator
+
+- Larger magnets $\rightarrow$ Control $\uparrow \quad$ Seek performance $\uparrow$
+- Latch reduces seek performance near it
+  - Magnetic interference
+  - Bi-stable latch $\rightarrow$ No performance loss
+
+---
+
 ### HDA (Head/Disc assembly)
 
-- HDA for ES drives require higher tolerance to environmental factors
 - 1,000,000+ hour MTBF acheived by
   - Particle filters
   - Dessicants and Active Carbon
   - Shrouding
 
----
-
-### Actuator
-
-- larger magnets - more control - faster seeks
-- latch to hold actuator in place - bi-stable in ES to prevent magnetic interference
-
 ### Spindle
 
-- TPI - Tracks/inch
-- Increasing RPM can lead to
-  - Read/write head going off track causing mis-read/mis-write
-  - increased windage
+- Moving faster is a tremendous engineering challenge
+  - Increased windage (airflow between disk and arm)
+  - Mis-read/mis-write
 
 ---
 
@@ -102,19 +105,19 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 ### Control processor
 
 - Handles read/write
-- Servo bursts - Field of info interspersed among data blocks
-- Info from Servo bursts are used to move the head to the target
+- Servo bursts
+  - Fields of positional information $\rightarrow$ Identify head's current position
+  - Interspersed among data blocks
 
 ---
 
 ### Servo processor
 
-- Controls servo ops - rotation, speed, direction adjustment
+- Servo operations - Rotation, Speed, Direction adjustment
 - More TPI $\rightarrow$ More servo processing
-- runout - head is unable to follow the track and stay above it
-- repeatable runout - same on each rotation - caused by platter waviness, motor variation
-- non repeatable - external influences
-- servo processor must constantly adjust for runout
+- Runout - Head is unable to follow the track
+  - Repeatable runout $\textemdash$ same on each rotation $\textemdash$ caused by platter waviness, motor variation
+  - Non repeatable $\textemdash$ external influences $\textemdash$ Harder to solve
 
 ---
 
@@ -123,20 +126,21 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 - Significantly more Silicon in ES products
 - ES have 2 processors
   - Control processor - Read/Write and interfacing
-  - Servo processor - servo ops
+  - Servo processor - Only performs servo calculations
 - PS have only one processor
-- SCSI command set is also more comprehensive and customisable 
+- SCSI command set is also more comprehensive
 
 ---
 
 ## Magnetics
 
-- Writes - data rate and latency improved by higher RPM
+- Writes - Data rate and latency improved by higher RPM
 - Reads - Can be adverally affected by high RPM because of noiser magnetic environment (Recording stress)
-- Anti ferromagnetic coupled media (AFC) reinforces magnetic field
+- Anti-ferromagnetic coupled media reinforces magnetic field
 
+---
 <!-- figure 3 -->
-![](figure3.png)
+$\quad\quad\quad$ ![w:900 h:600](figure3.png)
 
 ---
 
@@ -144,23 +148,31 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 
 ### Capacity
 
-- $Power \propto (RPM)^3$
-- ES use smaller platters for higher RPM and faster seeks $\rightarrow$ random access better
+- $\text{Power} \propto (\text{RPM})^3$
+- ES use smaller platters $\textemdash$ RPM $\uparrow\quad$ Seek performance $\uparrow$
 - But for the same capacity more platters needed $\rightarrow$ costly
 - PS drives $\rightarrow$ larger platters, lower RPM $\rightarrow$ cheaper per GB
-- trend towards depopulated drives (less platters) trading capacity for perfomance
+- Trend towards depopulated drives (1 surface per platter) $\rightarrow$ Performance $\uparrow\quad$ Capacity $\downarrow$
 
 ---
 
 ### Random I/O
 
-- ES have stronger seek scheduling making seek times ~3x
-- on average >2x random perfomance for ES compared to PS
-- lower duty cycle for ES
+ES drives have:
 
+- Stronger seek scheduling making seeks ~3x faster compared to PS
+- \>2x random perfomance (on average)
+- Lower duty cycle
+
+---
+
+$\quad\quad$ ![w:1000 h:600](figure7.png)
+
+---
+
+$\quad\quad$ ![w:1000 h:600](table2.png)
 <!-- figure 7 to show trend and table 2 to show impact of queue scheduling -->
-![](figure7.png)
-![](table2.png)
+
 ---
 
 ### Rotational vibation
@@ -169,31 +181,34 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 
 - PS drives way more susceptible to rotational vibration
 - ES drives designed to work in cabinet with other drives
-- Even cabinet design can affect rotational vibrations drastically (5 - 45 $rad/s^2$)
+- Even cabinet design can affect rotational vibrations drastically
 
-![](figure8.png)
+---
+
+$\quad\quad$ ![w:1000 h:600](figure8.png)
 
 ---
 
 ### Reliability
 
-- PS - 8 hrs/day 300 days/year, ES - 24 hrs/day 365 days/year
+- PS - 8 hrs/day 300 days/year, ES - 24 hrs/day, 365 days/year
 - AFR highly depends in design choices
 <!-- Use figure 9, 10, 11 to explain formulas -->
+
 ---
 
 - POH $\propto$ AFR
-![](figure9.png)
+$\quad$ ![w:920 h:550](figure9.png)
 
 ---
 
 - Duty cycle $\propto$ AFR (stronger correlation with more platters)
-![](figure10.png)
+$\quad$ ![w:920 h:540](figure10.png)
 
 ---
 
 - Temperature $\propto$ AFR
-![](figure11.png)
+$\quad$ ![w:920 h:550](figure11.png)
 
 ---
 
@@ -206,9 +221,21 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 
 ---
 
-![](table4.png)
-![](table5.png)
-![](table6.png)
+$$\quad$$
+$$\quad$$
+![w:1180 h:430](table4.png)
+
+---
+
+$$\quad$$
+$$\quad$$
+![w:1170 h:400](table5.png)
+
+---
+
+$$\quad$$
+$$\quad$$
+![w:1170 h:400](table6.png)
 
 ---
 
