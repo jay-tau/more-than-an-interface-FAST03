@@ -201,17 +201,17 @@ $\quad\quad$ ![w:1000 h:600](figure8.png)
 
 ---
 
-- POH $\propto$ AFR
+- AFR $\propto$ POH
 $\quad$ ![w:920 h:550](figure9.png)
 
 ---
 
-- Duty cycle $\propto$ AFR (stronger correlation with more platters)
+- AFR $\propto$ Duty cycle (stronger correlation with more platters)
 $\quad$ ![w:920 h:540](figure10.png)
 
 ---
 
-- Temperature $\propto$ AFR
+- AFR $\propto$ Temperature
 $\quad$ ![w:920 h:550](figure11.png)
 
 ---
@@ -220,7 +220,7 @@ $\quad$ ![w:920 h:550](figure11.png)
 
 <!-- Use table 4, 5, 6 to illustrate related studies -->
 - Many studies have been conducted comparing SCSI vs IDE
-- results depend a lot on design choices
+- Results depend a lot on design choices
 - General observation - with similar conditions SCSI perform better than IDE
 
 ---
