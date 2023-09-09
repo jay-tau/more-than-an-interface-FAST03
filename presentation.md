@@ -134,8 +134,8 @@ $\quad\quad\quad\quad$ ![w:830 h:530](figure2.png)
 
 ## Magnetics
 
-- Writes - Data rate and latency improved by higher RPM
-- Reads - Can be adverally affected by high RPM because of noiser magnetic environment (Recording stress)
+- Writes - Data rate and latency improved by higher RPM, sensitive to linear velocity
+- Reads - Can be adverally affected by high RPM because of noiser magnetic environment (Recording stress), insensitive to linear velocity
 - Anti-ferromagnetic coupled media reinforces magnetic field
 
 ---
@@ -153,6 +153,10 @@ $\quad\quad\quad$ ![w:900 h:600](figure3.png)
 - But for the same capacity more platters needed $\rightarrow$ costly
 - PS drives $\rightarrow$ larger platters, lower RPM $\rightarrow$ cheaper per GB
 - Trend towards depopulated drives (1 surface per platter) $\rightarrow$ Performance $\uparrow\quad$ Capacity $\downarrow$
+
+---
+
+$\quad\quad$ ![w:1000 h:600](table1.png)
 
 ---
 
@@ -223,7 +227,7 @@ $\quad$ ![w:920 h:550](figure11.png)
 
 $$\quad$$
 $$\quad$$
-![w:1180 h:430](table4.png)
+![w:1190 h:370](table4.png)
 
 ---
 
