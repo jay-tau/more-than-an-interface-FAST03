@@ -44,8 +44,6 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 - Make platter spin faster
 - Innovations trickle down from ES to PS
 
-<!-- todo add graph -->
-
 ---
 
 ### Aggregration
@@ -70,7 +68,7 @@ Joel Tony $\quad\quad\quad\quad\quad\quad$ Nirmal Govindaraj
 ## Tech differences
 
 <!-- figure 2 -->
-$\quad\quad\quad\quad$ ![w:830 h:530](figure2.png)
+$\quad\quad\quad\quad$ ![w:830 h:530](figures/figure2.png)
 
 ---
 
@@ -140,7 +138,7 @@ $\quad\quad\quad\quad$ ![w:830 h:530](figure2.png)
 
 ---
 <!-- figure 3 -->
-$\quad\quad\quad$ ![w:900 h:600](figure3.png)
+$\quad\quad\quad$ ![w:900 h:600](figures/figure3.png)
 
 ---
 
@@ -156,7 +154,7 @@ $\quad\quad\quad$ ![w:900 h:600](figure3.png)
 
 ---
 
-$\quad\quad$ ![w:1000 h:600](table1.png)
+$\quad\quad$ ![w:1000 h:600](tables/table1.png)
 
 ---
 
@@ -170,11 +168,11 @@ ES drives have:
 
 ---
 
-$\quad\quad$ ![w:1000 h:600](figure7.png)
+$\quad\quad$ ![w:1000 h:600](figures/figure7.png)
 
 ---
 
-$\quad\quad$ ![w:1000 h:600](table2.png)
+$\quad\quad$ ![w:1000 h:600](tables/table2.png)
 <!-- figure 7 to show trend and table 2 to show impact of queue scheduling -->
 
 ---
@@ -189,7 +187,7 @@ $\quad\quad$ ![w:1000 h:600](table2.png)
 
 ---
 
-$\quad\quad$ ![w:1000 h:600](figure8.png)
+$\quad\quad$ ![w:1000 h:600](figures/figure8.png)
 
 ---
 
@@ -202,17 +200,17 @@ $\quad\quad$ ![w:1000 h:600](figure8.png)
 ---
 
 - AFR $\propto$ POH
-$\quad$ ![w:920 h:550](figure9.png)
+$\quad$ ![w:920 h:550](figures/figure9.png)
 
 ---
 
 - AFR $\propto$ Duty cycle (stronger correlation with more platters)
-$\quad$ ![w:920 h:540](figure10.png)
+$\quad$ ![w:920 h:540](figures/figure10.png)
 
 ---
 
 - AFR $\propto$ Temperature
-$\quad$ ![w:920 h:550](figure11.png)
+$\quad$ ![w:920 h:550](figures/figure11.png)
 
 ---
 
@@ -227,19 +225,19 @@ $\quad$ ![w:920 h:550](figure11.png)
 
 $$\quad$$
 $$\quad$$
-![w:1190 h:370](table4.png)
+![w:1190 h:370](tables/table4.png)
 
 ---
 
 $$\quad$$
 $$\quad$$
-![w:1170 h:400](table5.png)
+![w:1170 h:400](tables/table5.png)
 
 ---
 
 $$\quad$$
 $$\quad$$
-![w:1170 h:400](table6.png)
+![w:1170 h:400](tables/table6.png)
 
 ---
 
